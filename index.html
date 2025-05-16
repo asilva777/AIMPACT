@@ -10,17 +10,21 @@
   <title>AIMPACT | ASilva Innovations</title>  
   <link rel="stylesheet" href="styles/style.css" />  
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet" />  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>  
 <body>  
   <!-- Navigation Bar -->  
   <header class="navbar">  
-    <div class="logo">AIMPACT</div>  
+    <div class="logo">
+      <img src="https://img1.wsimg.com/isteam/ip/58ed6e8f-da3e-442a-9a56-be3eddf67a9d/blob-f1972d0.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:200,h:200,cg:true" alt="AIMPACT Logo" style="height: 50px;" />
+    </div>  
     <nav>  
       <ul class="nav-links">  
-        <li><a href="#">Home</a></li>  
-        <li><a href="#">Solutions</a></li>  
-        <li><a href="#">Services</a></li>  
-        <li><a href="#">More</a></li>  
+        <li><a href="https://asilvainnovations.com">Home</a></li>  
+        <li><a href="https://asilvainnovations.com/aimpact">AIMPACT</a></li>  
+        <li><a href="https://asilvainnovations.com/ddrive">DRRiVE</a></li> 
+        <li><a href="https://asilvainnovations.com/services">Services</a></li>  
+        <li><a href="https://asilvainnovations.com/resources">Resources</a></li>  
       </ul>  
     </nav>  
   </header>  
@@ -59,6 +63,29 @@
     </div>  
   </section>  
 
+  <!-- Simulated Dashboards Section -->
+  <section class="section dark">
+    <h2>Sample Performance Dashboards</h2>
+    <div class="dashboard-grid">
+      <div class="dashboard-card">
+        <h3>Financial Perspective</h3>
+        <canvas id="financialChart"></canvas>
+      </div>
+      <div class="dashboard-card">
+        <h3>Customer Perspective</h3>
+        <canvas id="customerChart"></canvas>
+      </div>
+      <div class="dashboard-card">
+        <h3>Internal Processes</h3>
+        <canvas id="internalChart"></canvas>
+      </div>
+      <div class="dashboard-card">
+        <h3>Learning & Growth</h3>
+        <canvas id="learningChart"></canvas>
+      </div>
+    </div>
+  </section>
+
   <!-- Contact Form -->  
   <section class="section dark">  
     <h2>Drop Us A Line!</h2>  
@@ -75,6 +102,57 @@
     <p>© 2025 ASilva Innovations | Licensed by CC BY-NC-SA 4.0</p>  
   </footer>  
 
+  <script>
+    const financialChart = new Chart(document.getElementById('financialChart'), {
+      type: 'bar',
+      data: {
+        labels: ['Revenue', 'Expenses', 'Profit', 'ROI'],
+        datasets: [{
+          label: 'PHP in Millions',
+          data: [1.2, 0.85, 0.35, 0.22],
+          backgroundColor: '#00B8A9'
+        }]
+      }
+    });
+
+    const customerChart = new Chart(document.getElementById('customerChart'), {
+      type: 'pie',
+      data: {
+        labels: ['Satisfied', 'Neutral', 'Dissatisfied'],
+        datasets: [{
+          label: 'Customer Feedback',
+          data: [91, 7, 2],
+          backgroundColor: ['#F8B400', '#F85F73', '#6A2C70']
+        }]
+      }
+    });
+
+    const internalChart = new Chart(document.getElementById('internalChart'), {
+      type: 'line',
+      data: {
+        labels: ['Q1', 'Q2', 'Q3', 'Q4'],
+        datasets: [{
+          label: 'Order Fulfillment Days',
+          data: [4.2, 3.9, 3.6, 3.5],
+          borderColor: '#3A6351',
+          fill: false
+        }]
+      }
+    });
+
+    const learningChart = new Chart(document.getElementById('learningChart'), {
+      type: 'doughnut',
+      data: {
+        labels: ['Training', 'Satisfaction', 'Innovation'],
+        datasets: [{
+          label: 'Growth Metrics',
+          data: [40, 35, 25],
+          backgroundColor: ['#11999E', '#30E3CA', '#40514E']
+        }]
+      }
+    });
+  </script>
+
   <script src="scripts/script.js"></script>  
 </body>  
-</html>  
+</html>
